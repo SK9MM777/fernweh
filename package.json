@@ -1,0 +1,29 @@
+{
+  "name": "fernweh-island-survival",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5188",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 5188",
+    "test": "pnpm run test:domain && pnpm run test:browser",
+    "test:domain": "tsx --test tests/domain.test.ts tests/adventure-domain.test.ts tests/adventure-save.test.ts",
+    "test:browser": "node tests/playtest.mjs && node tests/adventure-playtest.mjs",
+    "inspect:canvas": "node scripts/inspect-threejs-canvas.mjs",
+    "test:progression": "tsx tests/progression-bot.ts",
+    "test:release": "node tests/release-v3.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/three": "^0.180.0",
+    "pngjs": "^7.0.0",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0"
+  }
+}
